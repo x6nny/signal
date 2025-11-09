@@ -23,7 +23,7 @@ Signal
 
 ## 🚀 Installation
 
-1. Add the module to your Roblox project (via Rojo, Wally, or manually).
+1. Grab the rbxm from the releases page and drag and drop it into studio
 2. Require it in your scripts:
 
    ```lua
