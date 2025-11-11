@@ -167,11 +167,19 @@ print(Multiply(4, 5))  --> 20
 
 ```lua
 type event<T...> = {
-	Connect: (self, (T...) -> ()) -> (() -> ()),
-	Once: (self, (T...) -> ()) -> (),
-	Wait: (self) -> T...,
-	Fire: (self, ...any) -> (),
-	DisconnectAll: (self) -> (),
+	enable : (event<T...>, enabled : boolean) -> (),
+	Limit : (event<T...>, amount : number, callBack : (T...) -> ()) -> () -> (),
+	Connect : (event<T...>, funct : (T...) -> ()) -> () -> (),
+	Once : (event<T...>, funct : (T...) -> ()) -> (),
+	Wait : (event<T...>) -> T...,
+	WaitUntil : (event<T...>, TimeOut : number?) -> T...,
+	Eval : (event<T...>, evaluator : (T...) -> boolean, callBack : (T...) -> ()) -> () -> (),
+	SetThrottle : (event<T...>, Time : number) -> (),
+	RemoveThrottle : (event<T...>) -> (),
+	Delay : (event<T...>, Time : number, callBack : (T...) -> ()) -> () -> (),
+	
+	Fire : (event<T...>, ...any) -> (),
+	DisconnectAll : (event<T...>) -> (),
 }
 ```
 
